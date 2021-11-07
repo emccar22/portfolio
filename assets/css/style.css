@@ -15,6 +15,10 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--tertiary-color);
     background-color: var(--secondary-color);
+    max-width: 1920px;
+    margin: 0 auto;
+    letter-spacing: .060rem;
+    
 }
 
 header {
@@ -26,6 +30,7 @@ header {
     position: -webkit-sticky;
     position: sticky;
     z-index: 9999;
+    
 }
 
 header h1 {
@@ -97,28 +102,35 @@ footer h2 {
 
 .flex {
     display: flex;
+    padding: 15px;
+    flex-basis: 100%;
+}
+
+.main {
+    margin: 0 25px 0 150px;
 }
 
 .section-title {
     font-size: 35px;
     padding: 15px;
-    margin-left: 50px;
     text-align: end;
     background-color: var(--secondary-color);
     color: var(--quaternary-color);
-
+    border-right: 2px solid var(--quaternary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.about-me {
-    padding: 30px;
-    flex-basis: 100%; 
-    
-    
+.bio {
+    margin: 0 150px 0 25px;
 }
+
 .about-me p {
     padding: 10px;
-    border-left: 2px solid var(--quaternary-color);
     flex-basis: 100%;
+}
+
+.work h2 {
+    margin: 8px;
 }
 
 .project {
@@ -127,10 +139,9 @@ footer h2 {
 
 .projects{
     padding: 10px;
-    margin-right: 150px;
+    margin: 0 150px 0 25px;
     display: flex;
     justify-content: space-between;
-    border-left: 2px solid var(--quaternary-color);
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
@@ -145,14 +156,6 @@ img {
     width: 100%
 }
 
-img::before:hover {
-    opacity: 0.5;
-}
-
-img::after:hover {
-    opacity: 1;
-}
-
 .main-project {
     flex-basis: 100%;
 }
@@ -163,55 +166,107 @@ img::after:hover {
     width:100%;
     border: 5px solid var(--tertiary-color);
     border-radius: 7px;
-    opacity: 0.5;
-    transition: img 0.5s ease;
 }
 
-
-a img:hover {
-    opacity: 1;
-}
 
 .projects h3 {
     font-size: 20px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-right: 15px;
     padding: 15px;
-    opacity: 1;
     background-color: var(--tertiary-color);
     color: var(--quaternary-color);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    justify-content: flex-end;
-    align-items: flex-end;
     position: absolute;
 }
 
 #contact {
-    display: flex;
     background-color: var(--secondary-color);
+    margin-bottom: 25px;
+}
+
+.contact h2 {
+    margin-left: -31px;
+}
+
+.contact-list {
+    margin: 0 150px 0 25px;
+    display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+
 }
 
 .contact-info {
     background-color: var(--secondary-color);
     justify-content: space-around;
     align-items: center;
+    line-height: 1.6;
+    
+}
+
+.contact-info h3 {
+    color: var(--quaternary-color);
+    font-size: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--tertairy-color);
+    font-size: 23px;
+    padding: 10px;
+    transition: background-color 0.5s ease;
+    border-radius: 7px;
+}
+
+.contact-info a:hover {
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
 }
 
 
-
 @media screen and (max-width: 575px) {
+    body {
+        
+    }
+
+    .main {
+        margin: 0;
+    }
+
     header h1 {
         flex: none;
+        font-size: 35px;
     }
 
     header nav ul {
         justify-content: center;
     }
 
-    .footer h2 {
+    footer h2 {
         font-size: 20px;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .section-title {
+        border-bottom: 2px solid var(--tertiary-color);
+        justify-content: center;
+        margin-left: unset;
+        text-align: center;
+        border-right: none;
+        margin-bottom: 20px;
+    }
+
+    .bio {
+        margin: 0;
     }
 
     .about-me {
@@ -220,7 +275,7 @@ a img:hover {
     }
 
     .about-me p {
-        border-left: none;
+        text-align: center;
     }
 
     .work {
@@ -229,19 +284,28 @@ a img:hover {
     }
 
     .projects {
-        margin-right: unset;
+        margin: 0;
         border-left: none;
     }
 
+    .project {
+        flex-basis: 100%;
+    }
+    
     .main-project img {
         height: 300px;
     }
 
-
-    
-    .section-title {
-        border-bottom: 2px solid var(--tertiary-color);
+    .contact {
         justify-content: center;
-        margin-left: unset;
+        flex-wrap: wrap;
+    }
+
+    .contact h2 {
+        margin-left: 0;
+    }
+
+    .contact-list {
+        margin: 0;
     }
 }
