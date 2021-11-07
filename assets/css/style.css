@@ -80,6 +80,7 @@ footer h2 {
     font-weight: normal;
     color: var(--quaternary-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-left: 150px;
 }
 
 .hero {
@@ -127,6 +128,7 @@ footer h2 {
 .about-me p {
     padding: 10px;
     flex-basis: 100%;
+    line-height: 1.55;
 }
 
 .work h2 {
@@ -228,11 +230,13 @@ img {
     color: var(--quaternary-color);
 }
 
+@media screen and (max-width: 980px) {
+   .main, .bio, .projects, .contact-list {
+       margin: 0 25px 0 25px;
+   }
+}
 
-@media screen and (max-width: 575px) {
-    body {
-        
-    }
+@media screen and (max-width: 768px) {
 
     .main {
         margin: 0;
@@ -250,6 +254,7 @@ img {
     footer h2 {
         font-size: 20px;
         text-align: center;
+        margin-left: 0;
     }
 
     .hero h2 {
@@ -307,5 +312,6 @@ img {
 
     .contact-list {
         margin: 0;
+        flex-direction: column;
     }
 }
